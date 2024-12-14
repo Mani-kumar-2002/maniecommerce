@@ -2,7 +2,7 @@ import { Navigate, useLocation } from "react-router-dom";
 
 function CheckAuth({ isAuthenticated, user, children }) {
   const location = useLocation();
-  
+
   // Allow access to auth routes when not authenticated
   if (location.pathname.startsWith('/auth/') && !isAuthenticated) {
     return children;
@@ -10,7 +10,7 @@ function CheckAuth({ isAuthenticated, user, children }) {
 
   // Redirect to login if not authenticated
   if (!isAuthenticated) {
-    return <Navigate to="/auth/login" replace />;
+    return <Navigate to="/" replace />;
   }
 
   // Redirect admin to dashboard from home page
