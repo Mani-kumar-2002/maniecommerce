@@ -10,7 +10,7 @@ function CheckAuth({ isAuthenticated, user, children }) {
 
   // Redirect to login if not authenticated
   if (!isAuthenticated) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/auth/login" replace />;
   }
 
   // Redirect admin to dashboard from home page
